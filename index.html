@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>IPL</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./team.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid header">
+        <div class="navbar-header logo">
+          <a href="./index.html">
+            <img
+              class="lazy"
+              src="https://www.iplt20.com/assets/images/ipl-logo-new-old.png"
+              alt="" />
+          </a>
+        </div>
+        <ul class="nav navbar-nav" style="width: 20%">
+          <li class="active"><a href="./index.html">Home</a></li>
+          <li><a href="./index.html">Teams</a></li>
+          <li><a href="#">News</a></li>
+        </ul>
+        <div class="navbar-form navbar-left" style="width: 30%">
+          <div class="input-group search-section">
+            <div style="display: flex; flex-direction: column; width: 100%">
+              <div style="display: flex; flex-direction: row">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="search-box"
+                  placeholder="Search"
+                  style="width: 100%"
+                  name="search"
+                  onkeyup="searchTeams()" />
+                <div class="input-group-btn">
+                  <button class="btn btn-default" onclick="searchTeamCards()">
+                    <i class="glyphicon glyphicon-search"></i>
+                  </button>
+                </div>
+              </div>
+              <ul id="myUL"></ul>
+            </div>
+          </div>
+        </div>
+        <div class="create-section float-right" id="create-section float-right">
+          <button
+            type="button"
+            class="btn btn-outline-warning"
+            id="createTeam"
+            onclick="openCreateTeam()">
+            CREATE TEAM
+          </button>
+          <button
+            type="button"
+            id="createTeamPlayer"
+            class="btn btn-outline-warning"
+            onclick="openCreateTeamPlayer()">
+            CREATE PLAYER
+          </button>
+        </div>
+      </div>
+    </nav>
+    <div class="create-team" id="create-team">
+      <form>
+        <div class="form-content">
+          <div class="form-row">
+            <label for="teamName" style="width: 30%">Team Name :</label>
+            <input
+              style="width: 70%"
+              class="form-input"
+              type="text"
+              id="teamName"
+              name="teamName" />
+          </div>
+          <br />
+          <div class="form-row">
+            <label for="playerCount" style="width: 30%">Players Count:</label>
+            <input
+              style="width: 70%"
+              class="form-input"
+              type="text"
+              id="playerCount"
+              name="playerCount" />
+          </div>
+          <br />
+          <div class="form-row">
+            <label for="topBatsMan" style="width: 30%">Top BatsMan:</label>
+            <input
+              style="width: 70%"
+              class="form-input"
+              type="text"
+              id="topBatsMan"
+              name="topBatsMan" />
+          </div>
+          <br />
+          <div class="form-row">
+            <label for="topBowler" style="width: 30%">Top Bowler:</label>
+            <input
+              style="width: 70%"
+              class="form-input"
+              type="text"
+              id="topBowler"
+              name="topBowler" />
+          </div>
+          <br />
+          <div class="form-row">
+            <label for="championshipCount" style="width: 30%"
+              >Championship Count:</label
+            >
+            <input
+              style="width: 70%"
+              class="form-input"
+              type="text"
+              id="championshipCount"
+              name="championshipCount" />
+          </div>
+          <br />
+          <div class="form-row">
+            <label for="bgColor" style="width: 30%">Bacground color :</label>
+            <input
+              style="width: 70%"
+              class="form-input"
+              type="color"
+              id="bgColor"
+              name="bgColor" />
+          </div>
+          <br />
+          <div class="form-row">
+            <label for="borderColor" style="width: 30%">Border color :</label>
+            <input
+              style="width: 70%"
+              class="form-input"
+              type="color"
+              id="borderColor"
+              name="borderColor" />
+          </div>
+          <br />
+          <div class="form-row">
+            <label for="imgLink" style="width: 30%">Image online link :</label>
+            <input
+              style="width: 70%"
+              class="form-input"
+              type="text"
+              id="imgLink"
+              name="imgLink" />
+          </div>
+          <br />
+          <div class="form-row">
+            <label for="teamPlayers" style="width: 30%"
+              >Choose Team Players:</label
+            >
+            <select
+              name="teamPlayers"
+              class="form-multi-select"
+              id="teamPlayers"
+              style="width: 70%"
+              multiple></select>
+          </div>
+
+          <br /><br />
+          <div class="form-row form-submit-section">
+            <button
+              type="button"
+              class="btn btn-outline-danger cancel-button"
+              onclick="closeForm('create-team')">
+              Cancel
+            </button>
+            <button
+              type="button"
+              class="btn btn-outline-success succes-button"
+              onclick="addTeam()">
+              Add Team
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="create-team" id="create-team-player">
+      <form>
+        <div class="form-content">
+          <div class="form-row">
+            <label for="playerName" style="width: 30%">Player Name :</label>
+            <input
+              style="width: 70%"
+              class="form-input"
+              type="text"
+              id="playerName"
+              name="playerName" />
+          </div>
+          <br />
+          <div class="form-row">
+            <label for="inputAge" style="width: 30%">Age</label>
+            <input
+              style="width: 70%"
+              class="form-input"
+              type="text"
+              id="inputAge"
+              name="inputAge" />
+          </div>
+          <br />
+          <div class="form-row">
+            <label for="playerState" style="width: 30%">From :</label>
+            <input
+              style="width: 70%"
+              class="form-input"
+              type="text"
+              id="playerState"
+              name="playerState" />
+          </div>
+          <br />
+          <div class="form-row">
+            <label for="playerRole" style="width: 30%">Role :</label>
+            <input
+              style="width: 70%"
+              class="form-input"
+              type="text"
+              id="playerRole"
+              name="playerRole" />
+          </div>
+          <br />
+          <div class="form-row">
+            <label for="playerDescription" style="width: 30%"
+              >Description :</label
+            >
+            <input
+              style="width: 70%"
+              class="form-input"
+              type="text"
+              id="playerDescription"
+              name="playerDescription" />
+          </div>
+          <br />
+          <div class="form-row">
+            <label for="playerPrice" style="width: 30%">Price :</label>
+            <input
+              style="width: 70%"
+              class="form-input"
+              type="text"
+              id="playerPrice"
+              name="playerPrice" />
+          </div>
+          <br />
+          <div class="form-row">
+            <label for="playerStatus" style="width: 30%"
+              >Playing Status :</label
+            >
+            <div style="width: 30%">
+              <input
+                class="form-input"
+                type="radio"
+                id="playerStatusYes"
+                name="playerStatus"
+                value="yes" />
+              <label for="playerStatusYes">Yes</label>
+              <input
+                class="form-input"
+                type="radio"
+                id="playerStatusNo"
+                name="playerStatus"
+                value="No" />
+              <label for="playerStatusNo">No</label><br />
+            </div>
+          </div>
+          <br />
+          <div class="form-row">
+            <label for="playerImage" style="width: 30%"
+              >Player Image link:</label
+            >
+            <input
+              style="width: 70%"
+              class="form-input"
+              type="text"
+              id="playerImage"
+              name="playerImage" />
+          </div>
+
+          <br /><br />
+          <div class="form-row form-submit-section">
+            <button
+              type="button"
+              class="btn btn-outline-danger cancel-button"
+              onclick="closeForm('create-team-player')">
+              Cancel
+            </button>
+            <button
+              type="button"
+              class="btn btn-outline-success succes-button"
+              onclick="addPlayer()">
+              Add Player
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="body-section" id="body-section">
+      <section class="main-section" id="main-section"></section>
+    </div>
+    <div class="footer-section">
+      <ul>
+        <li>
+          <h3>TEAM</h3>
+        </li>
+        <li><a href="#">CHENNAI SUPER KINGS</a></li>
+        <li><a href="#">DELHI CAPITALS</a></li>
+        <li><a href="#">GUJARAT TITANS</a></li>
+        <li><a href="#">KOLKATA KNIGHT RIDERS</a></li>
+        <li><a href="#">LUCKNOW SUPER GAINTS</a></li>
+        <li><a href="#">MUMBAI INDIANS</a></li>
+        <li><a href="#">PANJAB KINGS</a></li>
+        <li><a href="#">RAJASTAN ROYALS</a></li>
+      </ul>
+      <ul>
+        <li>
+          <h3>HELPFUL LINKS</h3>
+        </li>
+        <li><a href="#">HOME</a></li>
+        <li><a href="#">ABOUT</a></li>
+        <li><a href="#">NEWS</a></li>
+      </ul>
+      <ul>
+        <li>
+          <h3>SPONSERS</h3>
+        </li>
+        <li><a href="#">PAYTM</a></li>
+        <li><a href="#">CEAT</a></li>
+        <li><a href="#">STAR SPORTS</a></li>
+        <li><a href="#">TATA</a></li>
+        <li><a href="#">RUPAY</a></li>
+        <li><a href="#">+ Many More</a></li>
+      </ul>
+      <ul>
+        <li>
+          <h3>ADDRESS</h3>
+        </li>
+        <li><a href="#">BUILDING 101</a></li>
+        <li><a href="#">CENTRAL AVENUE</a></li>
+        <li><a href="#">LA - 902722</a></li>
+        <li><a href="#">UNITED STATES</a></li>
+      </ul>
+    </div>
+    <script src="./main.js"></script>
+    <script src="./team.js"></script>
+  </body>
+</html>

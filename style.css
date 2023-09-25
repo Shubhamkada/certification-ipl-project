@@ -1,0 +1,195 @@
+.header {
+    display: flex;
+    width: 100%;
+    align-items: center;
+  }
+  
+  .logo {
+    width: 40%;
+  }
+  
+  .search-section {
+    width: 100%;
+  }
+  
+  .create-section {
+    width: 30%;
+    display: flex;
+    gap: 25px;
+  }
+  
+  .main-section {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  
+  .card {
+    width: var(--cardWidth);
+    height: var(--cardHeight);
+    margin: var(--cardMargin);
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: #fff;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    transition: 0.2s ease-in-out;
+  }
+  :root {
+    --cardWidth: 310px;
+    --cardHeight: 400px;
+    --cardMargin: 16px;
+  }
+  
+  .team-image {
+    width: 60%;
+    height: 60%;
+  }
+  
+  .card-item {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+  .card-item h1 {
+    color: white;
+    text-align: center;
+    width: 200px;
+  }
+  #ul-body-section {
+    width: 100%;
+    display: flex;
+  }
+  
+  .create-team {
+    display: none;
+    width: 100%;
+    justify-content: end;
+    position: absolute;
+  }
+  
+  .create-team form {
+    width: 30%;
+    margin-right: 20px;
+    color: rgb(242, 226, 86);
+    border: 2px solid rgb(122, 116, 171);
+    background: rebeccapurple;
+  }
+  
+  .create-team form button {
+    float: right;
+    margin-right: 50px;
+    margin-bottom: 10px;
+  }
+  
+  .succes-button {
+    color: green;
+  }
+  
+  .cancel-button {
+    color: red;
+  }
+  
+  .navbar {
+    margin: 0;
+  }
+  
+  .form-row {
+    display: flex;
+    width: 100%;
+  }
+  
+  .form-content {
+    margin: 20px;
+  }
+  
+  .form-input {
+    color: black;
+  }
+  
+  .card:hover {
+    height: 420px;
+    width: 330px;
+  }
+  
+  .form-multi-select {
+    color: black;
+  }
+  
+  #myUL li a {
+    border: 1px solid #ddd;
+    margin-top: -1px; /* Prevent double borders */
+    background-color: #f6f6f6;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    color: black;
+    display: block;
+  }
+  
+  #myUL li {
+    list-style-type: none;
+  }
+  
+  #myUL {
+    position: absolute;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    display: block;
+    margin-top: 35px;
+  }
+  
+  .form-submit-section {
+    justify-content: flex-end;
+  }
+  
+  .footer-section {
+    background: linear-gradient(
+      90deg,
+      rgba(2, 0, 36, 1) 0%,
+      rgba(9, 9, 121, 1) 44%,
+      rgba(0, 212, 255, 1) 100%
+    );
+    height: 300px;
+    padding: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  
+  .footer-section ul li {
+    list-style: none;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    cursor: pointer;
+  }
+  
+  .footer-section ul li a,
+  footer ul li {
+    text-decoration: none;
+    color: #b8b8b8;
+    font-size: 12px;
+  }
+  
+  .footer-section ul li a:hover,
+  footer ul li:hover {
+    color: #009688;
+  }
+  
+  .footer-section ul li h3 {
+    text-decoration: none;
+    color: #dcdcdc;
+    font-size: 16px;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+  
+  @media only screen and (max-width: 900px) {
+    .create-section {
+      display: none;
+    }
+  }

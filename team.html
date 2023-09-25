@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>IPL</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./team.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+  <body id="teamPage">
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid header">
+        <div class="navbar-header logo">
+          <a href="./index.html">
+            <img
+              class="lazy"
+              src="https://www.iplt20.com/assets/images/ipl-logo-new-old.png"
+              alt="" />
+          </a>
+        </div>
+
+        <div class="navbar-form navbar-left" style="width: 30%">
+          <div class="input-group search-section">
+            <div style="display: flex; flex-direction: column; width: 100%">
+              <div style="display: flex; flex-direction: row">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="search-box"
+                  placeholder="Search"
+                  style="width: 100%"
+                  name="search"
+                  onkeyup="searchTeams()" />
+                <div class="input-group-btn">
+                  <button class="btn btn-default" onclick="searchTeamCards()">
+                    <i class="glyphicon glyphicon-search"></i>
+                  </button>
+                </div>
+              </div>
+              <ul id="myUL"></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="team-body-section">
+      <div class="left-image" id="left-image">
+        <div id="team-icon"></div>
+        <div id="team-data-section" style="width: 100%; margin-left: 200px">
+          <div class="row">
+            <label class="data-key">Team Name </label>
+            :&nbsp;&nbsp;<label
+              class="data-value"
+              style="width: 60%"
+              id="teamName">
+            </label>
+          </div>
+          <div class="row">
+            <label class="data-key">Players Count </label>
+            :&nbsp;&nbsp;<label
+              class="data-value"
+              style="width: 60%"
+              id="playersCount">
+            </label>
+          </div>
+          <div class="row">
+            <label class="data-key">Top Batsman </label>
+            :&nbsp;&nbsp;<label
+              class="data-value"
+              style="width: 60%"
+              id="topBatsMan">
+            </label>
+          </div>
+          <div class="row">
+            <label class="data-key">Top Bowler </label>
+            :&nbsp;&nbsp;<label
+              class="data-value"
+              style="width: 60%"
+              id="topBowler">
+            </label>
+          </div>
+          <div class="row">
+            <label class="data-key">Championship </label>
+            :&nbsp;&nbsp;<label
+              class="data-value"
+              style="width: 60%"
+              id="championshipCount">
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="right-content" id="right-content"></div>
+    </div>
+    <div class="footer-section">
+      <ul>
+        <li>
+          <h3>TEAM</h3>
+        </li>
+        <li><a href="#">CHENNAI SUPER KINGS</a></li>
+        <li><a href="#">DELHI CAPITALS</a></li>
+        <li><a href="#">GUJARAT TITANS</a></li>
+        <li><a href="#">KOLKATA KNIGHT RIDERS</a></li>
+        <li><a href="#">LUCKNOW SUPER GAINTS</a></li>
+        <li><a href="#">MUMBAI INDIANS</a></li>
+        <li><a href="#">PANJAB KINGS</a></li>
+        <li><a href="#">RAJASTAN ROYALS</a></li>
+      </ul>
+      <ul>
+        <li>
+          <h3>HELPFUL LINKS</h3>
+        </li>
+        <li><a href="#">HOME</a></li>
+        <li><a href="#">ABOUT</a></li>
+        <li><a href="#">NEWS</a></li>
+      </ul>
+      <ul>
+        <li>
+          <h3>SPONSERS</h3>
+        </li>
+        <li><a href="#">PAYTM</a></li>
+        <li><a href="#">CEAT</a></li>
+        <li><a href="#">STAR SPORTS</a></li>
+        <li><a href="#">TATA</a></li>
+        <li><a href="#">RUPAY</a></li>
+        <li><a href="#">+ Many More</a></li>
+      </ul>
+      <ul>
+        <li>
+          <h3>ADDRESS</h3>
+        </li>
+        <li><a href="#">BUILDING 101</a></li>
+        <li><a href="#">CENTRAL AVENUE</a></li>
+        <li><a href="#">LA - 902722</a></li>
+        <li><a href="#">UNITED STATES</a></li>
+      </ul>
+    </div>
+    <script src="./main.js"></script>
+    <script src="./team.js"></script>
+  </body>
+</html>
